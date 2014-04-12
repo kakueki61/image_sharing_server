@@ -1,0 +1,15 @@
+# IDE
+out
+.idea
+*.iml
+
+# OSX
+.DS_Store
+*/.DS_Store
+*/**/.DS_Store
+
+# Windows
+Thumbs.db
+
+# Others
+docs
