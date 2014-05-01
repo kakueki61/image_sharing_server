@@ -1,9 +1,10 @@
 <?php
 // application
 require_once APP_DIR.'app_controller.php';
-require_once APP_DIR.'app_model.php';
-require_once APP_DIR.'app_layout_view.php';
 require_once APP_DIR.'app_exception.php';
+require_once APP_DIR.'app_json_view.php';
+require_once APP_DIR.'app_layout_view.php';
+require_once APP_DIR.'app_model.php';
 
 // helpers
 require_once HELPERS_DIR.'html_helper.php';

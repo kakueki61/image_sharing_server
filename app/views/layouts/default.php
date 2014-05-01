@@ -16,7 +16,7 @@
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="#">DietCake Hello</a>
+                <a class="brand" href="#">DietCake</a>
             </div>
         </div>
     </div>

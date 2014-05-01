@@ -10,5 +10,5 @@
  */
 class AppController extends Controller
 {
-    public $default_view_class = 'AppLayoutView';
-} 
+    public $default_view_class = 'AppJsonView';
+}
