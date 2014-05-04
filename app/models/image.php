@@ -11,4 +11,21 @@ class Image {
     public static function getMessage() {
         return 'Does this function work? Yes!!';
     }
+
+    public static function getMessagesByPassword($password) {
+        $db = DB::conn('normal');
+
+        $rows = $db->rows("SELECT message FROM test WHERE pass = ? ORDER BY created DESC", array($password));
+
+        if(!$rows) {
+            return array();
+        }
+
+        $message_list = array();
+        foreach($rows as $row) {
+            $message_list = $row['message'];
+        }
+
+        return $message_list;
+    }
 } 

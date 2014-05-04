@@ -32,10 +32,16 @@ class ImageController extends AppController {
 
     /**
      * The function to test to get params and select data from DB by the params.
-     * @param pass
      */
     public function test_get() {
-        $message = Image::getMessage();
+        $password = Param::get('password', 'hoge');
+
+        if($password === 'hoge') {
+            $message = Image::getMessage();
+        } else {
+            $messages = Image::getMessagesByPassword($password);
+        }
+
         $this->set(get_defined_vars());
     }
 } 
