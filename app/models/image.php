@@ -15,7 +15,7 @@ class Image {
     public static function getMessagesByPassword($password) {
         $db = DB::conn('normal');
 
-        $rows = $db->rows("SELECT message FROM test WHERE pass = ? ORDER BY created DESC", array($password));
+        $rows = $db->rows("SELECT message FROM message WHERE password = ? ORDER BY created DESC", array($password));
 
         if(!$rows) {
             return array();

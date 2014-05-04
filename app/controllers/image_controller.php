@@ -44,4 +44,4 @@ class ImageController extends AppController {
 
         $this->set(get_defined_vars());
     }
-} 
+}

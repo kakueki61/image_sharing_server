@@ -9,5 +9,7 @@
 echo('test for image/testGet');
 $title = 'Image';
 $response = array(
-    'test' => $message
+    message => $message,
+    messages => $messages,
+    password => $password
 );

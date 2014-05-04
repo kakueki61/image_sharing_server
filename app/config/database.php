@@ -35,7 +35,15 @@ class DB extends SimpleDBI
     private function afterCommit() {
     }
 
-    public static function getConnectionSettings($destination = null) {
+    /**
+     * データベースの接続設定を取得する
+     *
+     * このメソッドは、SimpleDBI クラスのサブクラスでオーバーライドして使われます。
+     *
+     * @param  string $destination 接続先
+     * @return array  DSN などの接続設定の配列
+     */
+    public static function getConnectSettings($destination = null) {
         switch($destination) {
             case 'normal':
                 $dsn = DB_NORMAL_DSN;
@@ -60,7 +68,7 @@ class DB extends SimpleDBI
      * @param arrya $params
      * @param bool $access_time
      */
-    protected function onQueryEnd($sql, arrya $params = array(), $access_time = false) {
+    protected function onQueryEnd($sql, array $params = array(), $access_time = false) {
         if(ENV_PRODUCTION) {
             return;
         }

@@ -6,14 +6,15 @@ require_once APP_DIR.'app_json_view.php';
 require_once APP_DIR.'app_layout_view.php';
 require_once APP_DIR.'app_model.php';
 
+// lib
+require_once LIB_DIR.'SimpleDBI/src/SimpleDBI.php';
+
 // helpers
 require_once HELPERS_DIR.'html_helper.php';
 
 // config
 require_once CONFIG_DIR.'log.php';
-
-// lib
-require_once LIB_DIR.'SimpleDBI/src/SimpleDBI.php';
+require_once CONFIG_DIR.'database.php';
 
 spl_autoload_register(function($name) {
     $filename = Inflector::underscore($name).'.php';
