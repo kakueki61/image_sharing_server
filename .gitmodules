@@ -1,3 +1,6 @@
 [submodule "dietcake"]
 	path = dietcake
 	url = git@github.com:dietcake/dietcake.git
+[submodule "lib/SimpleDBI"]
+	path = lib/SimpleDBI
+	url = git@github.com:ttsuruoka/php-simple-dbi.git
