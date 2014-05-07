@@ -27,7 +27,12 @@ class ImageController extends AppController {
      * @param texts
      */
     public function test_submit() {
+        $message = Param::get('message');
+        $password = Param::get('password');
 
+        Image::setMessage($message, $password);
+
+        $this->set(get_defined_vars());
     }
 
     /**

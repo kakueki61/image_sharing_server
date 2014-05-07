@@ -6,6 +6,12 @@
 
 class DB extends SimpleDBI
 {
+    /**
+     * @param $dsn
+     * @param $username
+     * @param $password
+     * @param $driver_options
+     */
     public function __construct($dsn, $username, $password, $driver_options) {
         parent::__construct($dsn, $username, $password, $driver_options);
     }

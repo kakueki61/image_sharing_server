@@ -13,8 +13,9 @@ require_once LIB_DIR.'SimpleDBI/src/SimpleDBI.php';
 require_once HELPERS_DIR.'html_helper.php';
 
 // config
-require_once CONFIG_DIR.'log.php';
 require_once CONFIG_DIR.'database.php';
+require_once CONFIG_DIR.'log.php';
+require_once CONFIG_DIR.'time.php';
 
 spl_autoload_register(function($name) {
     $filename = Inflector::underscore($name).'.php';

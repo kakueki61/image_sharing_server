@@ -8,14 +8,28 @@
 
 class Image {
 
+    public static function setMessage($message, $password) {
+        var_dump($message, $password);
+
+        $db = DB::conn('normal');
+
+        $params = array(
+            'message' => $message,
+            'password' => $password,
+            'created' => Time::now()
+        );
+        $db->insert('japanese_text', $params);
+    }
+
     public static function getMessage() {
         return 'Does this function work? Yes!!';
     }
 
     public static function getMessagesByPassword($password) {
+        var_dump($password);
         $db = DB::conn('normal');
 
-        $rows = $db->rows("SELECT message FROM message WHERE password = ? ORDER BY created DESC", array($password));
+        $rows = $db->rows("SELECT message FROM japanese_text WHERE password = ? ORDER BY created DESC", array($password));
 
         if(!$rows) {
             return array();

@@ -6,6 +6,8 @@
  * @version 1.00 14/05/01 20:26
  */ 
 
+$title = 'Image';
 $response = array(
-    'test' => $test
+    message => $message,
+    password => $password
 );
