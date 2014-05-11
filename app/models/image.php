@@ -8,6 +8,11 @@
 
 class Image {
 
+    public function __construct($password) {
+        $this->password = $password;
+        $test = 'check if local val is set or not.';
+    }
+
     public static function setMessage($message, $password) {
         var_dump($message, $password);
 
@@ -42,4 +47,13 @@ class Image {
 
         return $message_list;
     }
+
+    public function saveImages() {
+    }
+
+    public function getImagePath() {
+
+    }
+
+
 } 

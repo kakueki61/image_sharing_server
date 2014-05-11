@@ -17,6 +17,10 @@ require_once CONFIG_DIR.'database.php';
 require_once CONFIG_DIR.'log.php';
 require_once CONFIG_DIR.'time.php';
 
+// others
+define('WEBROOT_DIR', APP_DIR.'webroot/');
+define('IMG_DIR', WEBROOT_DIR.'img/');
+
 spl_autoload_register(function($name) {
     $filename = Inflector::underscore($name).'.php';
     if(strpos($name, 'Controller') !== false) {
