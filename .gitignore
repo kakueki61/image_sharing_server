@@ -13,3 +13,8 @@ Thumbs.db
 
 # Others
 docs
+
+# App
+app/config/core.php
+app/config/core_devel.php
+app/config/sql/base.sql
