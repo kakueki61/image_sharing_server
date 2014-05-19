@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test File Upload</title>
+</head>
+<body>
+
+<p>Specify Files you wanna upload.</p>
+<form method="post" action="../index.php?dc_action=image/upload" enctype="multipart/form-data">
+    <input type="hidden" name="MAX_FILE_SIZE" value=1024000>
+    <input type="file" name="uploadFiles[]" multiple><br>
+    password
+    <textarea name="password" rows="1" cols="30"></textarea><br>
+    <input type="submit" value="Submit"><br>
+</form>
+
+</body>
+</html>
