@@ -26,4 +26,19 @@ class Time {
     {
         return date('Y-m-d H:i:s', $time);
     }
+
+    /**
+     * Returns if current timestamp is before given timestamp
+     * @param $time
+     * @return bool returns current ＜ $time
+     */
+    public static function before($time)
+    {
+        if ($time === null) {
+            return false;
+        }
+
+        $time = is_int($time) ? $time : strtotime($time);
+        return time() < $time;
+    }
 } 

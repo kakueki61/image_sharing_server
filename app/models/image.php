@@ -94,8 +94,26 @@ class Image {
         }
     }
 
+    /**
+     * Returns a list of image paths restored with given password
+     * @return array image path list
+     */
     public function getImagePath() {
+        $db = DB::conn('normal');
 
+        $rows = $db->rows("SELECT * FROM image WHERE password = ?", array($this->password));
+        if (!$rows) {
+            return array();
+        }
+
+        $image_path_list = array();
+        foreach($rows as $row) {
+            if (Time::before($row['expiring'])) {
+                $image_path_list[] = $row['image_path'];
+            }
+        }
+
+        return $image_path_list;
     }
 
 }
