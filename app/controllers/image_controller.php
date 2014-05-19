@@ -19,6 +19,11 @@ class ImageController extends AppController {
      * @param pass
      */
     public function get() {
+        $password = Param::get('password');
+        $image = new Image($password);
+        $image_path_list = $image->getImagePath();
+
+        $this->set(get_defined_vars());
     }
 
     /**
