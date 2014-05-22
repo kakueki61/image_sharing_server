@@ -6,12 +6,12 @@
  * @version 1.00 14/05/01 20:49
  */
 
-class Image {
+class Image extends AppModel {
 
     const POST_FILE_KEY = 'uploadFiles';
 
-    public function __construct($password) {
-        $this->password = $password;
+    public function __construct($upload_id) {
+        $this->upload_id = $upload_id;
         $test = 'check if local val is set or not.';
     }
 
@@ -78,13 +78,11 @@ class Image {
                 // record password and the path of the uploaded files
                 // TODO user info
                 $now = Time::now();
-                $expiring = Time::toYMDHMS(strtotime('+2 week'));
                 $params = array(
+                    'upload_id' => $this->upload_id,
                     'user_id' => 000000000,
-                    'password' => $this->password,
                     'image_path' => 'img/' . $new_file_name,
                     'created' => $now,
-                    'expiring' => $expiring
                 );
 
                 $db->insert('image', $params);

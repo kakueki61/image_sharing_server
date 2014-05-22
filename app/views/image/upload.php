@@ -7,6 +7,6 @@
 $title = 'Upload';
 $response = array(
     result => true,
-    image => $image,
+    upload => $upload,
     password => $password
 );
