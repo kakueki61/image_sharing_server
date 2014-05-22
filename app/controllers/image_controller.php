@@ -55,11 +55,21 @@ class ImageController extends AppController {
         $this->set(get_defined_vars());
     }
 
-    public function upload() {
+    public function upload()
+    {
         $password = Param::get('password');
-        $image = new Image($password);
-        $image->saveImages();
+
+        $upload = Upload::get($password);
+        $upload->process();
 
         $this->set(get_defined_vars());
+    }
+
+    /**
+     * uploads additional images
+     */
+    public function add()
+    {
+
     }
 }
